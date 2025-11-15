@@ -1,0 +1,50 @@
+{
+  "_comment": "TAWHIRI Configuration - Copy this to config.json and customize",
+  
+  "data_dir": "/home/user/tawhiri_data",
+  
+  "space_weather": {
+    "noaa_api_key": "",
+    "bom_api_key": "",
+    "cache_ttl_seconds": 600,
+    "update_interval_minutes": 10
+  },
+  
+  "orbit_viz": {
+    "earth_textures_dir": "/home/user/tawhiri_data/earth",
+    "tle_file": "/home/user/tawhiri_data/tle-single.txt",
+    "sat_metadata": "/home/user/tawhiri_data/3d/sat_metadata.csv",
+    "preferences_dir": "/home/user/tawhiri_data/3d",
+    "skyfield_cache": "/home/user/tawhiri_data/skyfield_cache"
+  },
+  
+  "logging": {
+    "log_file": "/home/user/tawhiri_data/logs/tawhiri.log",
+    "log_level": "INFO",
+    "log_to_console": true,
+    "log_format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  },
+  
+  "deployment": {
+    "environment": "development",
+    "offline_mode": false,
+    "high_contrast_mode": false
+  },
+  
+  "_deployment_examples": {
+    "windows_dev": {
+      "data_dir": "C:\\Users\\YourName\\tawhiri_data"
+    },
+    "linux_production": {
+      "data_dir": "/opt/tawhiri/data",
+      "environment": "production",
+      "offline_mode": true
+    },
+    "nzdf_secure": {
+      "data_dir": "/mnt/secure/tawhiri/data",
+      "environment": "production",
+      "offline_mode": true,
+      "log_file": "/var/log/tawhiri/tawhiri.log"
+    }
+  }
+}

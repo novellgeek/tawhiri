@@ -1,0 +1,29 @@
+# TAWHIRI Platform Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core framework
+streamlit>=1.28.0
+
+# Space Weather Module
+requests>=2.31.0
+plotly>=5.17.0
+numpy>=1.24.0
+scipy>=1.11.0
+fpdf>=1.7.2
+kaleido>=0.2.1              # Optional: for PDF chart export
+
+# Orbit Visualization Module
+skyfield>=1.45
+
+# Common utilities
+python-dateutil>=2.8.2
+
+# Development & Testing
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.9.0
+flake8>=6.1.0
+mypy>=1.5.0
+
+# Logging (standard library, but listed for documentation)
+# logging (built-in)
