@@ -1,0 +1,13 @@
+New / */Facility NZL_RRU
+SetPosition */Facility/NZL_RRU Geodetic -36.6 174.83 132
+
+SetPosition */Facility/NZL_RRU Geodetic -36.6 174.83 132
+New / */Facility POL_PL1
+
+New / */Facility/NZL_RRU/Sensor 827
+Define */Facility/NZL_RRU/Sensor/827 SimpleCone 90
+Point */Facility/NZL_RRU/Sensor/827 Fixed AzEl 0 90 Hold
+Location */Facility/NZL_RRU/Sensor/827 Center
+SetConstraint */Facility/NZL_RRU/Sensor/827 Range Min 100000 Max 40000000
+SetConstraint */Facility/NZL_RRU/Sensor/827 AzimuthAngle Min 0 Max 360
+SetConstraint */Facility/NZL_RRU/Sensor/827 ElevationAngle Min 15 Max 85
