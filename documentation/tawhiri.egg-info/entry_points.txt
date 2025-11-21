@@ -1,0 +1,3 @@
+[console_scripts]
+tawhiri-orbitviz = tawhiri.orbit_viz.app:main
+tawhiri-spaceweather = tawhiri.space_weather.app:main
