@@ -213,3 +213,37 @@ def _generic_impact_description(scale_type: str, level: str) -> str:
         }
     
     return descriptions.get(level, "Impact description not available.")
+
+def g_scale_from_kp(kp_index: float) -> Tuple[str, str]:
+    """Alias for g_scale() - for compatibility."""
+    return g_scale(kp_index)
+
+
+def g_scale_auto(value: float, *, kind: str = "kp") -> Tuple[str, str]:
+    """Automatically determine G-scale from either Kp or Ap index."""
+    if kind.lower() == "ap":
+        return g_scale_from_ap(value)
+    return g_scale(value)
+
+
+def get_severity_class(scale_level: str) -> str:
+    """Map a scale level to its severity class."""
+    scale_level = (scale_level or "").upper()
+    
+    if scale_level.startswith("R"):
+        if scale_level in ["R0"]: return "ok"
+        if scale_level in ["R1", "R2"]: return "caution"
+        if scale_level in ["R3"]: return "watch"
+        return "severe"
+    elif scale_level.startswith("S"):
+        if scale_level in ["S0"]: return "ok"
+        if scale_level in ["S1", "S2"]: return "caution"
+        if scale_level in ["S3"]: return "watch"
+        return "severe"
+    elif scale_level.startswith("G"):
+        if scale_level in ["G0", "G1"]: return "ok"
+        if scale_level in ["G2"]: return "caution"
+        if scale_level in ["G3"]: return "watch"
+        return "severe"
+    
+    return "severe"
